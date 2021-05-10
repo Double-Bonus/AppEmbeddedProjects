@@ -28,8 +28,8 @@ class ProjectViewModel(context: Context) : ViewModel() {
     fun addActor(fullName: String?, birthYear: String?, movie: String?) {
         if (fullName != null && birthYear != null && movie != null) {
             birthYear.toIntOrNull()?.let {
-                val actor = Project(0, fullName, it, Parts(true, false, true, false,
-                false))
+                val actor = Project(0, fullName, it, true, false, true, false,
+                false)
                 viewModelScope.launch {
                     database.projectDao().insertActor(actor)
                     getAllActors()

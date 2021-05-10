@@ -8,5 +8,10 @@ data class Project(
         @PrimaryKey(autoGenerate = true) val projectId: Int,
         val Name: String,
         val Difficulty: Int,
-        val parts: Parts
+        //val parts: Parts
+        val MCU: Boolean,
+        val Accelerometer: Boolean,
+        val Hydro: Boolean,
+        val Resistors: Boolean,
+        val Bluetooth: Boolean
 )
