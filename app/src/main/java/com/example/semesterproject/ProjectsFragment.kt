@@ -20,15 +20,16 @@ class ProjectsFragment : Fragment() {
         binding.viewmodel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
-        val adapter = ProjectAdapter(ProjectAdapter.ActorClickListener {
+        val adapter = ProjectAdapter(ProjectAdapter.ProjectClickListener {
             viewModel.deleteActor(it)
         })
         binding.actorsRecyclerView.adapter = adapter
 
-        viewModel.actors.observe(viewLifecycleOwner) {
+        viewModel.projects.observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
 
+        // TODO !!!!!!!!!!
         binding.addBtn.setOnClickListener {
             viewModel.addActor(
                     binding.actorNameField.text.toString(),
@@ -36,7 +37,7 @@ class ProjectsFragment : Fragment() {
                     binding.movieTitleField.text.toString()
             )
         }
-
+        // TODO !!!!!!!!!!
         binding.filterBtn.setOnClickListener {
             viewModel.filter(
                     binding.birthYearField.text.toString(),

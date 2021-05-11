@@ -10,21 +10,22 @@ import kotlinx.coroutines.launch
 
 class ProjectViewModel(context: Context) : ViewModel() {
     private val _projects = MutableLiveData<List<Project>>()
-    val actors: LiveData<List<Project>>
+    val projects: LiveData<List<Project>>
         get() = _projects
 
-    val database = Room.databaseBuilder(context, ProjectDatabase::class.java, "actors").build()
+    val database = Room.databaseBuilder(context, ProjectDatabase::class.java, "projects").build()
 
     init {
-        getAllActors()
+        getAllProjects()
     }
 
-    fun getAllActors() {
+    fun getAllProjects() {
         viewModelScope.launch {
             _projects.postValue(database.projectDao().getAll())
         }
     }
 
+    //TODO !!!!
     fun addActor(fullName: String?, birthYear: String?, movie: String?) {
         if (fullName != null && birthYear != null && movie != null) {
             birthYear.toIntOrNull()?.let {
@@ -32,19 +33,20 @@ class ProjectViewModel(context: Context) : ViewModel() {
                 false)
                 viewModelScope.launch {
                     database.projectDao().insertActor(actor)
-                    getAllActors()
+                    getAllProjects()
                 }
             }
         }
     }
 
+    //TODO !!!!
     fun filter(year: String?, movie: String?) {
         if (!year.isNullOrEmpty()) {
             getAllYounger(year)
         } else if (!movie.isNullOrEmpty()) {
             getAllFromMovie(movie)
         } else {
-            getAllActors()
+            getAllProjects()
         }
     }
 
@@ -64,10 +66,10 @@ class ProjectViewModel(context: Context) : ViewModel() {
         }
     }
 
-    fun deleteActor(actor: Project) {
+    fun deleteActor(project: Project) {
         viewModelScope.launch {
-            database.projectDao().deleteActor(actor)
-            getAllActors()
+            database.projectDao().deleteActor(project)
+            getAllProjects()
         }
     }
 }

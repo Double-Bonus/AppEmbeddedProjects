@@ -9,18 +9,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.semesterproject.databinding.ItemProjectBinding
 
 
-class ProjectAdapter(val clickListener: ActorClickListener) :
-        ListAdapter<Project, ProjectAdapter.ViewHolder>(ActorDiffCallback()) {
+class ProjectAdapter(val clickListener: ProjectClickListener) :
+        ListAdapter<Project, ProjectAdapter.ViewHolder>(ProjectDiffCallback()) {
 
     class ViewHolder(val binding: ItemProjectBinding) :
             RecyclerView.ViewHolder(binding.root) {
-        fun bind(project: Project, clickListener: ActorClickListener) {
+        fun bind(project: Project, clickListener: ProjectClickListener) {
             binding.project = project
             binding.clickListener = clickListener
         }
     }
 
-    class ActorDiffCallback : DiffUtil.ItemCallback<Project>() {
+    class ProjectDiffCallback : DiffUtil.ItemCallback<Project>() {
         override fun areItemsTheSame(oldItem: Project, newItem: Project): Boolean {
             return oldItem.projectId == newItem.projectId
         }
@@ -30,9 +30,9 @@ class ProjectAdapter(val clickListener: ActorClickListener) :
         }
     }
 
-    class ActorClickListener(val clickListener: (actor: Project) -> Unit) {
-        fun onClick(actor: Project) {
-            clickListener(actor)
+    class ProjectClickListener(val clickListener: (project: Project) -> Unit) {
+        fun onClick(project: Project) {
+            clickListener(project)
         }
     }
 
