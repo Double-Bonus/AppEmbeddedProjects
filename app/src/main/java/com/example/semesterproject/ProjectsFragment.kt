@@ -23,7 +23,7 @@ class ProjectsFragment : Fragment() {
         val adapter = ProjectAdapter(ProjectAdapter.ProjectClickListener {
             viewModel.deleteActor(it)
         })
-        binding.actorsRecyclerView.adapter = adapter
+        binding.projectsRecyclerView.adapter = adapter
 
         viewModel.projects.observe(viewLifecycleOwner) {
             adapter.submitList(it)
@@ -32,8 +32,8 @@ class ProjectsFragment : Fragment() {
         // TODO !!!!!!!!!!
         binding.addBtn.setOnClickListener {
             viewModel.addActor(
-                    binding.actorNameField.text.toString(),
-                    binding.actorYearField.text.toString(),
+                    binding.projectNameField.text.toString(),
+                    binding.projectDiffField.text.toString(),
                     binding.movieTitleField.text.toString()
             )
         }

@@ -8,19 +8,19 @@ import androidx.room.Query
 @Dao
 interface ProjectDao {
     @Insert
-    suspend fun insertActor(project: Project)
+    suspend fun insertProject(project: Project)
 
     @Query("SELECT * FROM Project")
     suspend fun getAll(): List<Project>
 
     @Query("SELECT * FROM Project WHERE Difficulty >:year")
-    suspend fun getYounger(year: Int): List<Project>
+    suspend fun getEasier(year: Int): List<Project>
 
     @Query("SELECT * FROM Project WHERE Name LIKE :movie")
-    suspend fun getByMovie(movie: String): List<Project>
+    suspend fun getByName(movie: String): List<Project>
 
     @Delete
-    suspend fun deleteActor(actor: Project)
+    suspend fun deleteProject(actor: Project)
 
 
 

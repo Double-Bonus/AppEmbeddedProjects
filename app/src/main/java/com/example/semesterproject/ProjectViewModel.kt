@@ -29,10 +29,10 @@ class ProjectViewModel(context: Context) : ViewModel() {
     fun addActor(fullName: String?, birthYear: String?, movie: String?) {
         if (fullName != null && birthYear != null && movie != null) {
             birthYear.toIntOrNull()?.let {
-                val actor = Project(0, fullName, it, true, false, true, false,
+                val project = Project(0, fullName, it, true, false, true, false,
                 false)
                 viewModelScope.launch {
-                    database.projectDao().insertActor(actor)
+                    database.projectDao().insertProject(project)
                     getAllProjects()
                 }
             }
@@ -53,7 +53,7 @@ class ProjectViewModel(context: Context) : ViewModel() {
     private fun getAllYounger(year: String?) {
         year?.toIntOrNull()?.let {
             viewModelScope.launch {
-                _projects.postValue(database.projectDao().getYounger(it))
+                _projects.postValue(database.projectDao().getEasier(it))
             }
         }
     }
@@ -61,14 +61,14 @@ class ProjectViewModel(context: Context) : ViewModel() {
     private fun getAllFromMovie(movie: String?) {
         movie?.let {
             viewModelScope.launch {
-                _projects.postValue(database.projectDao().getByMovie(movie))
+                _projects.postValue(database.projectDao().getByName(movie))
             }
         }
     }
 
     fun deleteActor(project: Project) {
         viewModelScope.launch {
-            database.projectDao().deleteActor(project)
+            database.projectDao().deleteProject(project)
             getAllProjects()
         }
     }

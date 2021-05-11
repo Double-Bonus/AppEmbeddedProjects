@@ -24,22 +24,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:text="@{project.name}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Brad Pitt"
-            android:text="@{project.name}"/>
+            tools:text="Robot Arm " />
 
         <TextView
-            android:id="@+id/birth_year_label"
+            android:id="@+id/difficulty_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:text="@{String.valueOf(project.Difficulty)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/name_label"
-            tools:text="1960"
-            android:text="@{String.valueOf(project.Difficulty)}"/>
+            tools:text="75" />
 /*
         TextView
             android:id="@+id/known_for_label"
