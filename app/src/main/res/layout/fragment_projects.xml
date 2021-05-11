@@ -19,30 +19,34 @@
             android:id="@+id/actors_recycler_view"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toTopOf="@+id/actor_name_field"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+            app:layout_constraintVertical_bias="1.0" />
 
         <EditText
             android:id="@+id/actor_name_field"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="72dp"
+            android:layout_marginBottom="112dp"
             android:ems="10"
             android:hint="Full name"
             android:inputType="textPersonName"
             app:layout_constraintBottom_toTopOf="@+id/movie_title_field"
             app:layout_constraintEnd_toStartOf="@+id/actor_year_field"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.988" />
 
         <EditText
             android:id="@+id/actor_year_field"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="68dp"
+            android:layout_marginBottom="108dp"
             android:ems="10"
             android:hint="Difficulty"
             android:inputType="textPersonName"
@@ -79,7 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Filter by birth year"
+            android:hint="Filter by diff?"
             android:inputType="textPersonName"
             app:layout_constraintBottom_toTopOf="@+id/filter_btn"
             app:layout_constraintEnd_toStartOf="@+id/movie_name_field"
@@ -91,7 +95,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Filter by movie name"
+            android:hint="Filter by ?"
             android:inputType="textPersonName"
             app:layout_constraintBottom_toTopOf="@+id/filter_btn"
             app:layout_constraintEnd_toEndOf="parent"
@@ -106,6 +110,25 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="CheckBox"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/actor_name_field" />
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="153dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="19dp"
+            android:text="Switch"
+            app:layout_constraintStart_toEndOf="@+id/checkBox"
+            app:layout_constraintTop_toBottomOf="@+id/actor_year_field" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
