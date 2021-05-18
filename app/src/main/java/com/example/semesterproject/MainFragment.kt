@@ -36,6 +36,11 @@ class MainFragment : Fragment() {
         binding.btnFindProject.setOnClickListener{
             binding.root.findNavController().navigate(R.id.action_mainFragment_to_projectsFragment)
         }
+
+        binding.btnResistance.setOnClickListener {
+            binding.root.findNavController().navigate(R.id.action_mainFragment_to_resistanceFragment)
+        }
+
         return binding.root
 /*
         binding.btnFindProject.setOnClickListener {
