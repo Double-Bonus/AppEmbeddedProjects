@@ -8,7 +8,7 @@
     tools:context=".ResistanceFragment" >
 
     <Spinner
-        android:id="@+id/static_spinner"
+        android:id="@+id/spin_firstBand"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,10 +17,34 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/dynamic_spinner"
+        android:id="@+id/spin_secondBand"
         android:layout_width="0dp"
         android:layout_height="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/static_spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/spin_firstBand" />
+
+    <Spinner
+        android:id="@+id/spin_thirdBand"
+        android:layout_width="0dp"
+        android:layout_height="84dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spin_secondBand" />
+
+    <Spinner
+        android:id="@+id/spin_fourthBand"
+        android:layout_width="0dp"
+        android:layout_height="106dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spin_thirdBand" />
+
+    <Spinner
+        android:id="@+id/spin_fifthBand"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spin_fourthBand" />
 </androidx.constraintlayout.widget.ConstraintLayout>
