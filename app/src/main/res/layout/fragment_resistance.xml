@@ -9,11 +9,10 @@
 
     <Spinner
         android:id="@+id/spin_firstBand"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_band_1"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
@@ -21,23 +20,25 @@
         android:layout_width="0dp"
         android:layout_height="80dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toEndOf="@+id/text_band_2"
         app:layout_constraintTop_toBottomOf="@+id/spin_firstBand" />
 
     <Spinner
         android:id="@+id/spin_thirdBand"
         android:layout_width="0dp"
-        android:layout_height="84dp"
+        android:layout_height="80dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toEndOf="@+id/text_band_3"
         app:layout_constraintTop_toBottomOf="@+id/spin_secondBand" />
 
     <Spinner
         android:id="@+id/spin_fourthBand"
         android:layout_width="0dp"
-        android:layout_height="106dp"
+        android:layout_height="80dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_band_4"
         app:layout_constraintTop_toBottomOf="@+id/spin_thirdBand" />
 
     <Spinner
@@ -45,6 +46,69 @@
         android:layout_width="0dp"
         android:layout_height="80dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_band_5"
         app:layout_constraintTop_toBottomOf="@+id/spin_fourthBand" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:text="Calculate Resistance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spin_fifthBand" />
+
+    <TextView
+        android:id="@+id/text_band_1"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="1-st Band"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/text_band_2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="2-nd Band"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_band_1" />
+
+    <TextView
+        android:id="@+id/text_band_3"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="3-rd Band"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_band_2" />
+
+    <TextView
+        android:id="@+id/text_band_4"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="4-th Band"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_band_3" />
+
+    <TextView
+        android:id="@+id/text_band_5"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="5-th Band"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_band_4" />
+
+    <TextView
+        android:id="@+id/text_omh_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="150 Omhs"
+        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
