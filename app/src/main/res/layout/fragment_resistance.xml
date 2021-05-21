@@ -50,7 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/spin_fourthBand" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_cacl_resistance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="92dp"
@@ -106,9 +106,29 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:text="150 Omhs"
-        app:layout_constraintEnd_toEndOf="@+id/button"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintEnd_toEndOf="@+id/btn_cacl_resistance"
+        app:layout_constraintStart_toStartOf="@+id/btn_cacl_resistance"
+        app:layout_constraintTop_toBottomOf="@+id/btn_cacl_resistance" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="138dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="change bands count"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_band_5" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="105dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="76dp"
+        android:text="5 bands"
+        app:layout_constraintBottom_toBottomOf="@+id/switch1"
+        app:layout_constraintStart_toEndOf="@+id/switch1"
+        app:layout_constraintTop_toTopOf="@+id/switch1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
