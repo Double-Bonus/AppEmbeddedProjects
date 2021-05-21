@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
+import android.widget.TextView
 import androidx.room.PrimaryKey
+import kotlin.math.pow
 
 
 /**
@@ -24,8 +26,8 @@ class ResistanceFragment : Fragment() {
     )
 
     data class ResVal(
-            val resistance: Int,
-            val tolerance: Double
+            var resistance: Double,
+            var tolerance: Double
     )
 
 
@@ -124,8 +126,12 @@ class ResistanceFragment : Fragment() {
 
             bands_cnt = get_bands_count(bands_input)
 
-            var testinit : Double = caclulate_resistance_five(bands_input)
-
+            var testinit : ResVal = caclulate_resistance_five(bands_input)
+            if(testinit.resistance != 0.0 && testinit.tolerance != -100.0){
+                val textView : TextView = view.findViewById(R.id.text_omh_value)
+                textView.text = testinit.resistance.toString() + " Omhs with tolerance of +/- " +
+                        testinit.tolerance.toString()
+            }
 
 
             //caclulate_resistance("lops")
@@ -174,7 +180,8 @@ class ResistanceFragment : Fragment() {
     }
 
 
-    private fun caclulate_resistance_five(spinners_input : Array<String> ): Double {
+    private fun caclulate_resistance_five(spinners_input : Array<String> ): ResVal {
+        var calc  = ResVal(0.0,-100.0)
         var values = arrayOf<Double>(-1.0,-1.0,-1.0,-1.0,-1.0) // returns Array<String?>
         for (i in 0..2) {
             for (j in 0..(color_digit.size-1)) {
@@ -184,7 +191,7 @@ class ResistanceFragment : Fragment() {
                 }
             }
             if(values[i] == -1.0){ // not valid input
-                return BAND_ERROR.toDouble() // TODO EINA NX KAIP CIA BLOHAI!
+                return calc // TODO EINA NX KAIP CIA BLOHAI!
             }
         }
 
@@ -198,7 +205,7 @@ class ResistanceFragment : Fragment() {
             }
         }
         if(values[3] == -1.0){ // not valid input for multiplayer
-            return BAND_ERROR.toDouble() // TODO EINA NX KAIP CIA BLOHAI!
+            return calc // TODO EINA NX KAIP CIA BLOHAI!
         }
 
 
@@ -211,14 +218,18 @@ class ResistanceFragment : Fragment() {
             }
         }
         if(values[4] == -1.0){ // not valid input for multiplayer
-            return BAND_ERROR.toDouble() // TODO EINA NX KAIP CIA BLOHAI!
+            return calc // TODO EINA NX KAIP CIA BLOHAI!
         }
 
 
+        calc.resistance = (values[0]*100 + values[1]*10 + values[2])*10.0.pow(values[3])
+        calc.tolerance = values[4]
 
 
 
-            return 10.0
+
+
+            return calc
     }
 
 
