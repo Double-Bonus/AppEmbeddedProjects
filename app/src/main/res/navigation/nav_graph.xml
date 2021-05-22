@@ -17,6 +17,9 @@
         <action
             android:id="@+id/action_mainFragment_to_resistanceFragment"
             app:destination="@id/resistanceFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_sensorFragment"
+            app:destination="@id/sensorFragment" />
     </fragment>
     <fragment
         android:id="@+id/projectsFragment"
@@ -30,4 +33,8 @@
         android:name="com.example.semesterproject.ResistanceFragment"
         android:label="fragment_resistance"
         tools:layout="@layout/fragment_resistance" />
+    <fragment
+        android:id="@+id/sensorFragment"
+        android:name="com.example.semesterproject.fragments.SensorFragment"
+        android:label="SensorFragment" />
 </navigation>

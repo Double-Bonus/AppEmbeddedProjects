@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="sensors"
+            type = "com.example.semesterproject.models.Sensor" />
+        <variable
+            name="clickListener"
+            type = "com.example.semesterproject.adapters.SensorAdapter.SenorClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image_sensor"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars"
+            app:sensorImage="@{sensors}"
+            />
+
+        <TextView
+            android:id="@+id/textView_name"
+            android:layout_width="142dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="15dp"
+            android:text="@{sensors.name}"
+            app:layout_constraintStart_toEndOf="@+id/image_sensor"
+            app:layout_constraintTop_toTopOf="@+id/image_sensor" />
+
+        <TextView
+            android:id="@+id/textView_descp"
+            android:layout_width="0dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="16dp"
+            android:text="@{sensors.desc}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.36"
+            app:layout_constraintStart_toStartOf="@+id/textView_name"
+            app:layout_constraintTop_toBottomOf="@+id/textView_name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
