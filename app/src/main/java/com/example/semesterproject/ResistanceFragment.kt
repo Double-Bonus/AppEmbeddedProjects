@@ -5,10 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.Spinner
-import android.widget.TextView
+import android.widget.*
 import androidx.room.PrimaryKey
 import kotlin.math.pow
 
@@ -92,6 +89,7 @@ class ResistanceFragment : Fragment() {
         val spinner3: Spinner = view.findViewById(R.id.spin_thirdBand)
         val spinner4: Spinner = view.findViewById(R.id.spin_fourthBand)
         val spinner5: Spinner = view.findViewById(R.id.spin_fifthBand)
+        val switch : Switch = view.findViewById(R.id.switch_bandCnt)
 
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter.createFromResource(
@@ -124,13 +122,21 @@ class ResistanceFragment : Fragment() {
 
 
 
-            bands_cnt = get_bands_count(bands_input)
 
-            var testinit : ResVal = caclulate_resistance_five(bands_input)
-            if(testinit.resistance != 0.0 && testinit.tolerance != -100.0){
-                val textView : TextView = view.findViewById(R.id.text_omh_value)
-                textView.text = testinit.resistance.toString() + " Omhs with tolerance of +/- " +
-                        testinit.tolerance.toString()
+            val textView : TextView = view.findViewById(R.id.text_omh_value)
+
+            var resistor_val : ResVal
+            if(bands_cnt == 5)
+                resistor_val = caclulate_resistance_five(bands_input)
+            else
+                resistor_val = caclulate_resistance_four(bands_input)
+
+
+            if(resistor_val.resistance != 0.0 && resistor_val.tolerance != -100.0){
+                textView.text = resistor_val.resistance.toString() + " Omhs with tolerance of +/- " +
+                        resistor_val.tolerance.toString()
+            } else{
+                textView.text = "Invalid color map"
             }
 
 
@@ -139,6 +145,21 @@ class ResistanceFragment : Fragment() {
             //stringTess = spinner5.selectedView.toString()
         }
 
+        switch.setOnClickListener {
+            val band_textView : TextView = view.findViewById(R.id.text_band_5)
+            if (switch.isChecked){
+                bands_cnt = 4
+                spinner5.visibility = View.INVISIBLE
+                band_textView.visibility = View.INVISIBLE
+            } else {
+                bands_cnt = 5
+                spinner5.visibility = View.VISIBLE
+                band_textView.visibility = View.VISIBLE
+            }
+            val textView : TextView = view.findViewById(R.id.text_bands)
+            textView.text = bands_cnt.toString() + " bands"
+
+        }
        // val string: String = R.array.resistor_color.toString(0)
 
 
@@ -165,19 +186,6 @@ class ResistanceFragment : Fragment() {
     }
 
 
-    //TODO nerikes
-   // var bands_input = arrayOf<String>
-    private fun get_bands_count(spinners_input : Array<String> ): Int {
-        if ((spinners_input[0] == "None" || spinners_input[1] == "None"  ||
-                spinners_input[2] == "None" )  || (spinners_input[0] == "Black" &&
-                        spinners_input[1] == "Black") || (spinners_input[4] != "None" &&
-                        spinners_input[3] == "None"))
-                return BAND_ERROR
-       else if (spinners_input[3] != "None")
-           return  FIVE_BANDS
-       else
-           return FOUR_BANDS
-    }
 
 
     private fun caclulate_resistance_five(spinners_input : Array<String> ): ResVal {
@@ -231,6 +239,59 @@ class ResistanceFragment : Fragment() {
 
             return calc
     }
+
+    private fun caclulate_resistance_four(spinners_input : Array<String> ): ResVal {
+        var calc  = ResVal(0.0,-100.0)
+        var values = arrayOf<Double>(-1.0,-1.0,-1.0,-1.0) // returns Array<String?>
+        for (i in 0..1) {
+            for (j in 0..(color_digit.size-1)) {
+                if (spinners_input[i] == color_digit[j].Color){
+                    values[i] = color_digit[j].value
+                    break
+                }
+            }
+            if(values[i] == -1.0){ // not valid input
+                return calc // TODO EINA NX KAIP CIA BLOHAI!
+            }
+        }
+
+
+        //TODO This is so retarded
+        //Multipleplyer
+        for (i in 0..(multiplier.size-1)) {
+            if (spinners_input[2] == multiplier[i].Color){
+                values[2] = multiplier[i].value
+                break
+            }
+        }
+        if(values[2] == -1.0){ // not valid input for multiplayer
+            return calc // TODO EINA NX KAIP CIA BLOHAI!
+        }
+
+
+
+        //Tolerance
+        for (i in 0..(tolerance.size-1)) {
+            if (spinners_input[3] == tolerance[i].Color){
+                values[3] = tolerance[i].value
+                break
+            }
+        }
+        if(values[3] == -1.0){ // not valid input for multiplayer
+            return calc // TODO EINA NX KAIP CIA BLOHAI!
+        }
+
+
+        calc.resistance = (values[0]*10 + values[1] )*10.0.pow(values[2])
+        calc.tolerance = values[3]
+
+
+
+
+
+        return calc
+    }
+
 
 
 
