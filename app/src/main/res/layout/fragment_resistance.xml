@@ -13,7 +13,7 @@
         android:layout_height="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/text_band_1"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView_resistor" />
 
     <Spinner
         android:id="@+id/spin_secondBand"
@@ -53,7 +53,7 @@
         android:id="@+id/btn_cacl_resistance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="88dp"
         android:text="Calculate Resistance"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,7 +65,7 @@
         android:layout_height="80dp"
         android:text="1-st Band"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView_resistor" />
 
 
     <TextView
@@ -104,18 +104,22 @@
         android:id="@+id/text_omh_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="150 Omhs"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="8dp"
+        android:text="150 Omhs with +- 10% tolerance"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btn_cacl_resistance"
+        app:layout_constraintHorizontal_bias="0.411"
         app:layout_constraintStart_toStartOf="@+id/btn_cacl_resistance"
-        app:layout_constraintTop_toBottomOf="@+id/btn_cacl_resistance" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_cacl_resistance"
+        app:layout_constraintVertical_bias="0.486" />
 
     <Switch
         android:id="@+id/switch_bandCnt"
         android:layout_width="138dp"
         android:layout_height="51dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:text="change bands count"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_band_5" />
@@ -129,6 +133,14 @@
         app:layout_constraintBottom_toBottomOf="@+id/switch_bandCnt"
         app:layout_constraintStart_toEndOf="@+id/switch_bandCnt"
         app:layout_constraintTop_toTopOf="@+id/switch_bandCnt" />
+
+    <ImageView
+        android:id="@+id/imageView_resistor"
+        android:layout_width="wrap_content"
+        android:layout_height="76dp"
+        android:src="@drawable/res_info"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
