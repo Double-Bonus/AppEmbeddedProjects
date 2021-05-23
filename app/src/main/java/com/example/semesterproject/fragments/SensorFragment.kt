@@ -38,7 +38,6 @@ class SensorFragment : Fragment() {
         }
 
         val adapter = SensorAdapter(SensorAdapter.SenorClickListener{
-            //viewModel.deleteDog(it)
         })
 
 

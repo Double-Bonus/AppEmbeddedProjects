@@ -9,7 +9,7 @@ import com.example.semesterproject.models.Sensor
 
 @BindingAdapter("sensorImage")
 fun ImageView.setDogImage(sensor: Sensor) {
-    Glide.with(this).load(sensor.image).into(this)
+    Glide.with(this).load(sensor.imageUrl).into(this)
 }
 
 @BindingAdapter("sensors")

@@ -21,7 +21,8 @@ abstract class SensorDatabase : RoomDatabase(){
                     context.applicationContext,
                     SensorDatabase::class.java,
                     "sensor-db"
-                ).build()
+                ).createFromAsset("sensor-db.db")
+                        .build()
                 _instance = instance
                 instance
             }
