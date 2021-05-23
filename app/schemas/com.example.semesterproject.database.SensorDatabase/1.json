@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "b864a88dba7837ca962039975a540efc",
+    "identityHash": "153785fd22dd56f2ff42fe247c2ae31d",
     "entities": [
       {
         "tableName": "sensors",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `imageUrl` TEXT NOT NULL, `name` TEXT NOT NULL, `desc` TEXT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `imageUrl` TEXT NOT NULL, `name` TEXT NOT NULL, `desc` TEXT NOT NULL, `price` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -31,6 +31,12 @@
             "columnName": "desc",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "price",
+            "columnName": "price",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -46,7 +52,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b864a88dba7837ca962039975a540efc')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '153785fd22dd56f2ff42fe247c2ae31d')"
     ]
   }
 }

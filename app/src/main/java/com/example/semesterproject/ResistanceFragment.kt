@@ -1,12 +1,11 @@
 package com.example.semesterproject
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.room.PrimaryKey
+import androidx.fragment.app.Fragment
 import kotlin.math.pow
 
 
@@ -63,12 +62,8 @@ class ResistanceFragment : Fragment() {
             Band("Violet", 0.1),
             Band("Gold", 5.0),
             Band("Silver", 10.0),
-            Band("None", 20.0)  // TODO chreck this!!!!!!
+            Band("None", 20.0)
     )
-
-    final val BAND_ERROR : Int = 0
-    final val FOUR_BANDS : Int = 4
-    final val FIVE_BANDS : Int = 5
 
 
     var bands_input = arrayOf<String>("","","","","") // returns Array<String?>
@@ -110,18 +105,12 @@ class ResistanceFragment : Fragment() {
         // TODO maybe use final?? id databindg is not used?
         val cacl_bnt: Button = view.findViewById(R.id.btn_cacl_resistance)
         cacl_bnt.setOnClickListener {
-           // val stringValss: String = spinner5.selectedView.toString()
-
-            //val tesss:Int =  get_spinners_input(stringValss)
 
             bands_input[0] = spinner.selectedItem.toString()
             bands_input[1] = spinner2.selectedItem.toString()
             bands_input[2] = spinner3.selectedItem.toString()
             bands_input[3] = spinner4.selectedItem.toString()
             bands_input[4] = spinner5.selectedItem.toString()
-
-
-
 
             val textView : TextView = view.findViewById(R.id.text_omh_value)
 
@@ -134,15 +123,11 @@ class ResistanceFragment : Fragment() {
 
             if(resistor_val.resistance != 0.0 && resistor_val.tolerance != -100.0){
                 textView.text = resistor_val.resistance.toString() + " Omhs with tolerance of +/- " +
-                        resistor_val.tolerance.toString()
+                        resistor_val.tolerance.toString() + " %"
             } else{
                 textView.text = "Invalid color map"
             }
 
-
-            //caclulate_resistance("lops")
-            //spinner5.
-            //stringTess = spinner5.selectedView.toString()
         }
 
         switch.setOnClickListener {
@@ -160,33 +145,9 @@ class ResistanceFragment : Fragment() {
             textView.text = bands_cnt.toString() + " bands"
 
         }
-       // val string: String = R.array.resistor_color.toString(0)
-
-
 
         return view
     }
-
-    // galim array iskart paduot!
-    private fun get_spinners_input(spin1: String?, spin2: String?, spin3: String?,
-                                   spin4: String?, spin5: String? ): Int {
-        if (spin1 != null)
-            if (spin1.equals(R.array.resistor_color.toString(1)))
-                return 1
-        return  0
-    }
-
-
-    fun caclulate_resistance(name: String?): Unit {
-        if (name != null)
-            println("Hello $name")
-        else
-            println("Hi there!")
-        // `return Unit` or `return` is optional
-    }
-
-
-
 
     private fun caclulate_resistance_five(spinners_input : Array<String> ): ResVal {
         var calc  = ResVal(0.0,-100.0)
@@ -199,10 +160,9 @@ class ResistanceFragment : Fragment() {
                 }
             }
             if(values[i] == -1.0){ // not valid input
-                return calc // TODO EINA NX KAIP CIA BLOHAI!
+                return calc
             }
         }
-
 
         //TODO This is so retarded
         //Multipleplyer
@@ -213,7 +173,7 @@ class ResistanceFragment : Fragment() {
             }
         }
         if(values[3] == -1.0){ // not valid input for multiplayer
-            return calc // TODO EINA NX KAIP CIA BLOHAI!
+            return calc // TODO could be better
         }
 
 
@@ -226,16 +186,12 @@ class ResistanceFragment : Fragment() {
             }
         }
         if(values[4] == -1.0){ // not valid input for multiplayer
-            return calc // TODO EINA NX KAIP CIA BLOHAI!
+            return calc // TODO could be better
         }
 
 
         calc.resistance = (values[0]*100 + values[1]*10 + values[2])*10.0.pow(values[3])
         calc.tolerance = values[4]
-
-
-
-
 
             return calc
     }
@@ -251,12 +207,10 @@ class ResistanceFragment : Fragment() {
                 }
             }
             if(values[i] == -1.0){ // not valid input
-                return calc // TODO EINA NX KAIP CIA BLOHAI!
+                return calc // TODO could be better
             }
         }
 
-
-        //TODO This is so retarded
         //Multipleplyer
         for (i in 0..(multiplier.size-1)) {
             if (spinners_input[2] == multiplier[i].Color){
@@ -265,10 +219,8 @@ class ResistanceFragment : Fragment() {
             }
         }
         if(values[2] == -1.0){ // not valid input for multiplayer
-            return calc // TODO EINA NX KAIP CIA BLOHAI!
+            return calc // TODO could be better
         }
-
-
 
         //Tolerance
         for (i in 0..(tolerance.size-1)) {
@@ -278,16 +230,11 @@ class ResistanceFragment : Fragment() {
             }
         }
         if(values[3] == -1.0){ // not valid input for multiplayer
-            return calc // TODO EINA NX KAIP CIA BLOHAI!
+            return calc // TODO could be better
         }
-
 
         calc.resistance = (values[0]*10 + values[1] )*10.0.pow(values[2])
         calc.tolerance = values[3]
-
-
-
-
 
         return calc
     }

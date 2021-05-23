@@ -29,13 +29,16 @@
 
         <TextView
             android:id="@+id/textView_name"
-            android:layout_width="190dp"
-            android:layout_height="52dp"
-            android:layout_marginStart="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:text="@{sensors.name}"
-            android:textSize="36sp"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toEndOf="@+id/image_sensor"
-            app:layout_constraintTop_toTopOf="@+id/image_sensor" />
+            app:layout_constraintTop_toTopOf="@+id/image_sensor"
+            tools:text="Accelerometer" />
 
         <TextView
             android:id="@+id/textView_descp"
@@ -45,9 +48,24 @@
             android:text="@{sensors.desc}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.36"
-            app:layout_constraintStart_toStartOf="@+id/textView_name"
-            app:layout_constraintTop_toBottomOf="@+id/textView_name" />
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/image_sensor"
+            app:layout_constraintTop_toBottomOf="@+id/textView_name"
+            tools:text="Some long description about this sensor. Some long description about this sensor. Some long description about this sensor." />
+
+        <TextView
+            android:id="@+id/textView_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_marginBottom="4dp"
+            android:text="@{`Approx price: ` + String.valueOf(sensors.price) + ` euros`}"
+
+            app:layout_constraintBottom_toTopOf="@+id/textView_descp"
+            app:layout_constraintStart_toEndOf="@+id/image_sensor"
+            app:layout_constraintTop_toBottomOf="@+id/textView_name"
+            tools:text="Approx price: 3 euros"
+            app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
