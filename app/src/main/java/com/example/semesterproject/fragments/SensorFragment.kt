@@ -31,7 +31,6 @@ class SensorFragment : Fragment() {
         val adapter = SensorAdapter(SensorAdapter.SenorClickListener{
         })
 
-
         binding.sensorsRecyclerView.adapter = adapter
 
         binding.viewmodel = viewModel

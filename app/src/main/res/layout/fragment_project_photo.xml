@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type = "com.example.semesterproject.viewmodels.ProjectViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/frameLayout3">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/sensors_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="96dp"
+            tools:layout_editor_absoluteY="271dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:projects="@{viewmodel.projects}"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
