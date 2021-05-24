@@ -30,7 +30,9 @@ class ProjectViewModel(private val db: ProjectDatabase) : ViewModel() {
     fun addActor(fullName: String?, birthYear: String?, movie: String?) {
         if (fullName != null && birthYear != null && movie != null) {
             birthYear.toIntOrNull()?.let {
-                val project = Project(0, fullName, it, true, false, true, false,
+                val project = Project(0, fullName, it,
+                        "file:///android_asset/lcd.png",
+                        true, false, true, false,
                 false, false, true, true, false, true, false, false,
                 false)
                 viewModelScope.launch {

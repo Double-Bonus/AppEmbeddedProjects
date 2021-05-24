@@ -8,6 +8,7 @@ data class Project(
         @PrimaryKey(autoGenerate = true) val projectId: Int,
         val Name: String,
         val Difficulty: Int,
+        val imageUrl: String,
         //val parts: Parts // TODO embeded classs
         val DC_motor: Boolean,
         val BLE: Boolean,
