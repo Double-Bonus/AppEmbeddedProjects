@@ -31,7 +31,7 @@ class ProjectViewModel(private val db: ProjectDatabase) : ViewModel() {
         if (fullName != null && birthYear != null && movie != null) {
             birthYear.toIntOrNull()?.let {
                 val project = Project(0, fullName, it,
-                        "file:///android_asset/lcd.png",
+                        "file:///android_asset/new_prcjt.png",
                         true, false, true, false,
                 false, false, true, true, false, true, false, false,
                 false)
