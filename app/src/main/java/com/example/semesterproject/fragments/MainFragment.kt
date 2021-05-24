@@ -38,6 +38,10 @@ class MainFragment : Fragment() {
             binding.root.findNavController().navigate(R.id.action_mainFragment_to_sensorFragment)
         }
 
+        binding.btnAllPrjcs.setOnClickListener {
+            binding.root.findNavController().navigate(R.id.action_mainFragment_to_projectPhotoFragment)
+        }
+
         return binding.root
     }
 

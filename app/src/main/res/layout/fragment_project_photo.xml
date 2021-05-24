@@ -15,7 +15,7 @@
         android:id="@+id/frameLayout3">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/sensors_recycler_view"
+            android:id="@+id/prj_ph_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:layout_editor_absoluteX="96dp"

@@ -20,6 +20,9 @@
         <action
             android:id="@+id/action_mainFragment_to_sensorFragment"
             app:destination="@id/sensorFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_projectPhotoFragment"
+            app:destination="@id/projectPhotoFragment" />
     </fragment>
     <fragment
         android:id="@+id/projectsFragment"
@@ -37,4 +40,8 @@
         android:id="@+id/sensorFragment"
         android:name="com.example.semesterproject.fragments.SensorFragment"
         android:label="SensorFragment" />
+    <fragment
+        android:id="@+id/projectPhotoFragment"
+        android:name="com.example.semesterproject.ProjectPhotoFragment"
+        android:label="ProjectPhotoFragment" />
 </navigation>

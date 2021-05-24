@@ -6,7 +6,7 @@
     <data>
 
         <variable
-            name="project"
+            name="project_ph"
             type="com.example.semesterproject.models.Project" />
         <variable
             name="clickListener"
@@ -18,14 +18,14 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/image_sensor"
+            android:id="@+id/image_project"
             android:layout_width="140dp"
             android:layout_height="140dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:projectImage="@{project}"
+            app:projectImage="@{project_ph}"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:text="@{project.name}"
+            android:text="@{project_ph.name}"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0"
@@ -42,13 +42,13 @@
             tools:text="Robot arm" />
 
         <TextView
-            android:id="@+id/textView_price"
+            android:id="@+id/textView_diff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:layout_marginTop="11dp"
             android:layout_marginBottom="4dp"
-            android:text="@{`Difficulty: ` + String.valueOf(project.difficulty) + `/100`}"
+            android:text="@{`Difficulty: ` + String.valueOf(project_ph.difficulty) + `/100`}"
             app:layout_constraintBottom_toTopOf="@+id/textView_descp"
             app:layout_constraintStart_toEndOf="@+id/image_sensor"
             app:layout_constraintTop_toBottomOf="@+id/textView_name"
