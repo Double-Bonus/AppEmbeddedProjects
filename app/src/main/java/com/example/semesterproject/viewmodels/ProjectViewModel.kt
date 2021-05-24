@@ -1,4 +1,4 @@
-package com.example.semesterproject
+package com.example.semesterproject.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.LiveData
@@ -6,6 +6,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.room.Room
+import com.example.semesterproject.database.ProjectDatabase
+import com.example.semesterproject.models.Project
 import kotlinx.coroutines.launch
 
 class ProjectViewModel(context: Context) : ViewModel() {

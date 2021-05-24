@@ -1,9 +1,9 @@
-package com.example.semesterproject
+package com.example.semesterproject.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity (tableName = "projects")
 data class Project(
         @PrimaryKey(autoGenerate = true) val projectId: Int,
         val Name: String,

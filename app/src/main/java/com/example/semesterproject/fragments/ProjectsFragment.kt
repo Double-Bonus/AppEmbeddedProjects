@@ -1,12 +1,15 @@
-package com.example.semesterproject
+package com.example.semesterproject.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.example.semesterproject.adapters.ProjectAdapter
 import com.example.semesterproject.databinding.FragmentProjectsBinding
+import com.example.semesterproject.viewmodels.ProjectViewModel
+import com.example.semesterproject.viewmodels.ProjectViewModelFactory
 
 
 class ProjectsFragment : Fragment() {

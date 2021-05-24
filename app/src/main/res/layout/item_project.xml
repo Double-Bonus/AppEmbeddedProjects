@@ -7,10 +7,10 @@
 
         <variable
             name="project"
-            type="com.example.semesterproject.Project" />
+            type="com.example.semesterproject.models.Project" />
         <variable
             name="clickListener"
-            type="com.example.semesterproject.ProjectAdapter.ProjectClickListener" />
+            type="com.example.semesterproject.adapters.ProjectAdapter.ProjectClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

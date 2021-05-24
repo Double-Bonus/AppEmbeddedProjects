@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.semesterproject.MainFragment"
+        android:name="com.example.semesterproject.fragments.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
@@ -23,14 +23,14 @@
     </fragment>
     <fragment
         android:id="@+id/projectsFragment"
-        android:name="com.example.semesterproject.ProjectsFragment"
+        android:name="com.example.semesterproject.fragments.ProjectsFragment"
         android:label="fragment_projects"
         tools:layout="@layout/fragment_projects">
 
     </fragment>
     <fragment
         android:id="@+id/resistanceFragment"
-        android:name="com.example.semesterproject.ResistanceFragment"
+        android:name="com.example.semesterproject.fragments.ResistanceFragment"
         android:label="fragment_resistance"
         tools:layout="@layout/fragment_resistance" />
     <fragment

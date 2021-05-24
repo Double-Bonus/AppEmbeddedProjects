@@ -1,4 +1,4 @@
-package com.example.semesterproject
+package com.example.semesterproject.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
+import com.example.semesterproject.R
 import kotlin.math.pow
 
 
@@ -89,7 +90,7 @@ class ResistanceFragment : Fragment() {
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter.createFromResource(
             this.requireContext(),
-        R.array.resistor_color,
+                R.array.resistor_color,
         android.R.layout.simple_spinner_item
         ).also { adapter ->
             // Specify the layout to use when the list of choices appears
@@ -238,13 +239,6 @@ class ResistanceFragment : Fragment() {
 
         return calc
     }
-
-
-
-
-
-
-
 
 
 }

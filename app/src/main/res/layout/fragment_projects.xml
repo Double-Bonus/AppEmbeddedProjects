@@ -6,14 +6,14 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.example.semesterproject.ProjectViewModel" />
+            type="com.example.semesterproject.viewmodels.ProjectViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ProjectsFragment">
+        tools:context=".fragments.ProjectsFragment">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/projects_recycler_view"

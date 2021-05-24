@@ -1,4 +1,4 @@
-package com.example.semesterproject
+package com.example.semesterproject.models
 
 data class Parts(
     val MCU: Boolean,

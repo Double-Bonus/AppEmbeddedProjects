@@ -13,15 +13,6 @@ import com.example.semesterproject.viewmodels.SensorsViewModel
 import com.example.semesterproject.viewmodels.SensorsViewModelFactory
 
 
-
-
-
-
-/**
- * A simple [Fragment] subclass.
- * Use the [SensorFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SensorFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

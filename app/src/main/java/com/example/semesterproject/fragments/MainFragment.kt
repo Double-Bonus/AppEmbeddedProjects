@@ -1,12 +1,12 @@
-package com.example.semesterproject
+package com.example.semesterproject.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import com.example.semesterproject.R
 import com.example.semesterproject.databinding.FragmentMainBinding
 
 
@@ -25,13 +25,6 @@ class MainFragment : Fragment() {
     ): View? {
         binding = FragmentMainBinding.inflate(inflater,
             container, false)
-        /*
-        val view = inflater.inflate(R.layout.fragment_main, container, false)
-        view.findViewById<Button>(R.id.btn_findProject).setOnClickListener {
-            view.findNavController().navigate(R.id.action_mainFragment_to_projectsFragment)
-        }
-        return view
-        */
 
         binding.btnFindProject.setOnClickListener{
             binding.root.findNavController().navigate(R.id.action_mainFragment_to_projectsFragment)
@@ -46,16 +39,6 @@ class MainFragment : Fragment() {
         }
 
         return binding.root
-/*
-        binding.btnFindProject.setOnClickListener {
-            //val action = ProjectsFragmentDirections.actionMainFragmentToMovieFragment()
-            val action = MainFragmentDirections.actionMainFragmentToProjectsFragment()
-            binding.root.findNavController().navigate(action)
-        }
-
-        return binding.root
-
- */
     }
 
 }

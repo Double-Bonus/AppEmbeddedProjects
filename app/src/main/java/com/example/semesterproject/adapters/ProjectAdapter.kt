@@ -1,12 +1,12 @@
-package com.example.semesterproject
+package com.example.semesterproject.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ExpandableListView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.semesterproject.databinding.ItemProjectBinding
+import com.example.semesterproject.models.Project
 
 
 class ProjectAdapter(val clickListener: ProjectClickListener) :
@@ -31,9 +31,7 @@ class ProjectAdapter(val clickListener: ProjectClickListener) :
     }
 
     class ProjectClickListener(val clickListener: (project: Project) -> Unit) {
-        fun onClick(project: Project) {
-            clickListener(project)
-        }
+        fun onClick(project: Project) = clickListener(project)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
