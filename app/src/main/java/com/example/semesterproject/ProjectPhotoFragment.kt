@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.example.semesterproject.adapters.ProjectAdapter
+import com.example.semesterproject.adapters.ProjectPhotoAdapter
 import com.example.semesterproject.database.ProjectDatabase
 import com.example.semesterproject.databinding.FragmentProjectPhotoBinding
-import com.example.semesterproject.viewmodels.ProjectViewModel
-import com.example.semesterproject.viewmodels.ProjectViewModelFactory
+import com.example.semesterproject.viewmodels.ProjectPhotoViewModel
+import com.example.semesterproject.viewmodels.ProjectPhotoViewModelFactory
 
 
 class ProjectPhotoFragment : Fragment() {
@@ -32,8 +32,8 @@ class ProjectPhotoFragment : Fragment() {
         val binding = FragmentProjectPhotoBinding.inflate(inflater)
 
 
-        val viewModel : ProjectViewModel by viewModels {
-            ProjectViewModelFactory(
+        val viewModel : ProjectPhotoViewModel by viewModels {
+            ProjectPhotoViewModelFactory(
                     ProjectDatabase.getInstance(
                             requireContext()
                     )
@@ -41,40 +41,22 @@ class ProjectPhotoFragment : Fragment() {
         }
 
         /*
-        val viewModel: ProjectViewModel by viewModels {
-            ProjectViewModelFactory(requireContext()) }
+        val viewModel: ProjectPhotoViewModel by viewModels {
+            ProjectPhotoViewModelFactory(requireContext()) }
 */
         binding.viewmodel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
-        val adapter = ProjectAdapter(ProjectAdapter.ProjectClickListener {
-            viewModel.deleteActor(it)
+        val adapter = ProjectPhotoAdapter(ProjectPhotoAdapter.ProjectPhotoClickListener {
+            //viewModel.deleteActor(it)
         })
         binding.prjPhRecyclerView.adapter = adapter
 
         //TODO do wee need this?
-        viewModel.projects.observe(viewLifecycleOwner) {
+        viewModel.projectsPh.observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
 
-        /*
-        // TODO !!!!!!!!!!
-        binding.addBtn.setOnClickListener {
-            //viewModel.addActor()
-            viewModel.addActor(
-                    binding.projectNameField.text.toString(),
-                    binding.projectDiffField.text.toString(),
-                    binding.movieTitleField.text.toString()
-            )
-        }
-        // TODO !!!!!!!!!!
-        binding.filterBtn.setOnClickListener {
-            viewModel.filter(
-                    binding.birthYearField.text.toString(),
-                    binding.movieNameField.text.toString()
-            )
-        }
-        */
 
         return binding.root
     }

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewmodel"
-            type = "com.example.semesterproject.viewmodels.ProjectViewModel" />
+            type = "com.example.semesterproject.viewmodels.ProjectPhotoViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,7 +21,7 @@
             tools:layout_editor_absoluteX="96dp"
             tools:layout_editor_absoluteY="271dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:projects="@{viewmodel.projects}"
+            app:projectsPh="@{viewmodel.projectsPh}"
             />
 
 

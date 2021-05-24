@@ -10,7 +10,7 @@
             type="com.example.semesterproject.models.Project" />
         <variable
             name="clickListener"
-            type="com.example.semesterproject.adapters.ProjectAdapter.ProjectClickListener" />
+            type="com.example.semesterproject.adapters.ProjectPhotoAdapter.ProjectPhotoClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -32,12 +32,12 @@
             android:id="@+id/textView_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="8dp"
             android:text="@{project_ph.name}"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintStart_toEndOf="@+id/image_sensor"
+            app:layout_constraintStart_toEndOf="@+id/image_project"
             app:layout_constraintTop_toTopOf="@+id/image_sensor"
             tools:text="Robot arm" />
 
@@ -45,12 +45,12 @@
             android:id="@+id/textView_diff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="11dp"
+            android:layout_marginTop="12dp"
             android:layout_marginBottom="4dp"
             android:text="@{`Difficulty: ` + String.valueOf(project_ph.difficulty) + `/100`}"
             app:layout_constraintBottom_toTopOf="@+id/textView_descp"
             app:layout_constraintStart_toEndOf="@+id/image_sensor"
+            app:layout_constraintStart_toStartOf="@+id/textView_name"
             app:layout_constraintTop_toBottomOf="@+id/textView_name"
             app:layout_constraintVertical_bias="1.0"
             tools:text="Difficulty : 75/100" />

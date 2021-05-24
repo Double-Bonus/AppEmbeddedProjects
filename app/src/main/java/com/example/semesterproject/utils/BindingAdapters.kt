@@ -5,6 +5,7 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.semesterproject.adapters.ProjectAdapter
+import com.example.semesterproject.adapters.ProjectPhotoAdapter
 import com.example.semesterproject.adapters.SensorAdapter
 import com.example.semesterproject.models.Project
 import com.example.semesterproject.models.Sensor
@@ -28,4 +29,9 @@ fun RecyclerView.setDogs(sensors: List<Sensor>?) {
 @BindingAdapter("projects")
 fun RecyclerView.setProjects(projects: List<Project>?) {
     projects?.let { (adapter as ProjectAdapter).submitList(projects) }
+}
+
+@BindingAdapter("projectsPh")
+fun RecyclerView.setProjectsPh(projects: List<Project>?) {
+    projects?.let { (adapter as ProjectPhotoAdapter).submitList(projects) }
 }
