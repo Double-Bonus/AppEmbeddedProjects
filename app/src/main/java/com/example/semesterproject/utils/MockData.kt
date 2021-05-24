@@ -1,5 +1,6 @@
 package com.example.semesterproject.utils
 
+import com.example.semesterproject.models.Project
 import com.example.semesterproject.models.Sensor
 import kotlin.random.Random
 
@@ -105,5 +106,62 @@ object MockData {
 
     )
 
+    val prjc_mck = listOf(
+            Project(0,
+                    "pirmas",
+                    18,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    true,
+                    true,
+                    false,
+                    true,
+                    true,
+                    false,
+                    false
+                    ),
+            Project(0,
+                    "antr",
+                    36,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    true,
+                    true,
+                    false,
+                    true,
+                    true,
+                    false,
+                    false
+            ),
+            Project(0,
+                    "trec",
+                    22,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    true,
+                    true,
+                    false,
+                    true,
+                    true,
+                    false,
+                    false
+            ),
+
+    )
+
+
     fun getRandomSensor(): Sensor = sensors[Random.nextInt(0, sensors.size)]
+    fun getProjectMock(): Project = prjc_mck[Random.nextInt(0, prjc_mck.size)]
 }

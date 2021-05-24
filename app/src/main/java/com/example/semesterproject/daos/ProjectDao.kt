@@ -9,7 +9,7 @@ import com.example.semesterproject.models.Project
 @Dao
 interface ProjectDao {
     @Insert
-    suspend fun insertProject(project: Project)
+    suspend fun insertAll(vararg project: Project)
 
     @Query("SELECT * FROM projects")
     suspend fun getAll(): List<Project>

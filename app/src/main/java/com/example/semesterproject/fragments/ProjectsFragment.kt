@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.semesterproject.adapters.ProjectAdapter
+import com.example.semesterproject.database.ProjectDatabase
 import com.example.semesterproject.databinding.FragmentProjectsBinding
 import com.example.semesterproject.viewmodels.ProjectViewModel
 import com.example.semesterproject.viewmodels.ProjectViewModelFactory
@@ -18,8 +19,20 @@ class ProjectsFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentProjectsBinding.inflate(inflater)
-        val viewModel: ProjectViewModel by viewModels { ProjectViewModelFactory(requireContext()) }
 
+
+        val viewModel : ProjectViewModel by viewModels {
+            ProjectViewModelFactory(
+                    ProjectDatabase.getInstance(
+                            requireContext()
+                    )
+            )
+        }
+
+        /*
+        val viewModel: ProjectViewModel by viewModels {
+            ProjectViewModelFactory(requireContext()) }
+*/
         binding.viewmodel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
@@ -28,13 +41,16 @@ class ProjectsFragment : Fragment() {
         })
         binding.projectsRecyclerView.adapter = adapter
 
+
+        //TODO do wee need this?
         viewModel.projects.observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
 
         // TODO !!!!!!!!!!
         binding.addBtn.setOnClickListener {
-            viewModel.addActor(
+            //viewModel.addActor()
+        viewModel.addActor(
                     binding.projectNameField.text.toString(),
                     binding.projectDiffField.text.toString(),
                     binding.movieTitleField.text.toString()
