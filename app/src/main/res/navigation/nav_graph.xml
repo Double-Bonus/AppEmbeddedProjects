@@ -42,6 +42,6 @@
         android:label="SensorFragment" />
     <fragment
         android:id="@+id/projectPhotoFragment"
-        android:name="com.example.semesterproject.ProjectPhotoFragment"
+        android:name="com.example.semesterproject.fragments.ProjectPhotoFragment"
         android:label="ProjectPhotoFragment" />
 </navigation>

@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="112dp"
             android:ems="10"
-            android:hint="Full name"
+            android:hint="Project title"
             android:inputType="textPersonName"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/project_diff_field"
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:ems="10"
-            android:hint="Movie"
+            android:hint="Title"
             android:inputType="textPersonName"
             app:layout_constraintBottom_toTopOf="@+id/filter_btn"
             app:layout_constraintEnd_toStartOf="@+id/add_btn"
@@ -81,13 +81,13 @@
             app:layout_constraintTop_toTopOf="@+id/movie_title_field" />
 
         <EditText
-            android:id="@+id/birth_year_field"
+            android:id="@+id/difficulty_field"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="12dp"
             android:ems="10"
-            android:hint="Filter by diff?"
+            android:hint="Filter by dificulty"
             android:inputType="textPersonName"
             app:layout_constraintBottom_toTopOf="@+id/movie_title_field"
             app:layout_constraintEnd_toStartOf="@+id/movie_name_field"
@@ -104,11 +104,11 @@
             android:ems="10"
             android:hint="Filter by ?"
             android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="@+id/birth_year_field"
+            app:layout_constraintBottom_toBottomOf="@+id/difficulty_field"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/birth_year_field"
-            app:layout_constraintTop_toTopOf="@+id/birth_year_field"
+            app:layout_constraintStart_toEndOf="@+id/difficulty_field"
+            app:layout_constraintTop_toTopOf="@+id/difficulty_field"
             app:layout_constraintVertical_bias="0.0" />
 
         <Button

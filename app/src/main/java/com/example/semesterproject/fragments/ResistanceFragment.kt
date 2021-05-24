@@ -10,11 +10,6 @@ import com.example.semesterproject.R
 import kotlin.math.pow
 
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ResistanceFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ResistanceFragment : Fragment() {
 
     data class Band(
@@ -26,7 +21,6 @@ class ResistanceFragment : Fragment() {
             var resistance: Double,
             var tolerance: Double
     )
-
 
 
     // TODO can rename!!  ar tikrai mutable list reiktu???
@@ -190,7 +184,6 @@ class ResistanceFragment : Fragment() {
             return calc // TODO could be better
         }
 
-
         calc.resistance = (values[0]*100 + values[1]*10 + values[2])*10.0.pow(values[3])
         calc.tolerance = values[4]
 
@@ -239,6 +232,5 @@ class ResistanceFragment : Fragment() {
 
         return calc
     }
-
 
 }

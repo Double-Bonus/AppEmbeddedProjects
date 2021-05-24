@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 class SensorsViewModel (private val db: SensorDatabase) : ViewModel() {
 
     private val _sensors = MutableLiveData<List<Sensor>>()
-    val sensors: LiveData<List<Sensor>> //TODO delete? if not used?
+    val sensors: LiveData<List<Sensor>>
         get() = _sensors
 
     init {

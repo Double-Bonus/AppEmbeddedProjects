@@ -31,7 +31,7 @@ class SensorAdapter (private val clickListener: SenorClickListener) :
     }
 
 
-    // TODO delete?
+    // TODO delete? (add link to wiki/shop ?)
     class SenorClickListener(private val clickListener: (sensor: Sensor) -> Unit){
         fun onClick(sensor: Sensor) = clickListener(sensor)
     }
@@ -40,8 +40,7 @@ class SensorAdapter (private val clickListener: SenorClickListener) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):
             ViewHolder {
         return ViewHolder(ItemSensorBinding.inflate(
-            LayoutInflater.from(parent.context)
-        )
+            LayoutInflater.from(parent.context))
         )
     }
 

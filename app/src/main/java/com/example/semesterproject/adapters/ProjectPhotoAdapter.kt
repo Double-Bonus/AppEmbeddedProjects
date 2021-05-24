@@ -15,7 +15,6 @@ class ProjectPhotoAdapter (val clickListener: ProjectPhotoClickListener) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(project: Project, clickListener: ProjectPhotoClickListener) {
             binding.projectPh = project
-            binding.clickListener
             binding.clickListener = clickListener
         }
     }
@@ -47,7 +46,6 @@ class ProjectPhotoAdapter (val clickListener: ProjectPhotoClickListener) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(getItem(position), clickListener)
     }
-
 
 
 }

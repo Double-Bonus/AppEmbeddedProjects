@@ -11,7 +11,7 @@ import com.example.semesterproject.models.Project
 import com.example.semesterproject.models.Sensor
 
 @BindingAdapter("sensorImage")
-fun ImageView.setDogImage(sensor: Sensor) {
+fun ImageView.setSensorImage(sensor: Sensor) {
     Glide.with(this).load(sensor.imageUrl).into(this)
 }
 
@@ -22,7 +22,7 @@ fun ImageView.setProjectImage(project: Project) {
 
 
 @BindingAdapter("sensors")
-fun RecyclerView.setDogs(sensors: List<Sensor>?) {
+fun RecyclerView.setSensors(sensors: List<Sensor>?) {
     sensors?.let { (adapter as SensorAdapter).submitList(sensors) }
 }
 

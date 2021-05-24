@@ -14,17 +14,14 @@ interface ProjectDao {
     @Query("SELECT * FROM projects")
     suspend fun getAll(): List<Project>
 
-    @Query("SELECT * FROM projects WHERE Difficulty >:year")
-    suspend fun getEasier(year: Int): List<Project>
+    @Query("SELECT * FROM projects WHERE Difficulty >:diff")
+    suspend fun getEasier(diff: Int): List<Project>
 
-    @Query("SELECT * FROM projects WHERE Name LIKE :movie")
-    suspend fun getByName(movie: String): List<Project>
+    @Query("SELECT * FROM projects WHERE Name LIKE :name")
+    suspend fun getByName(name: String): List<Project>
 
     @Delete
     suspend fun deleteProject(project: Project)
-
-
-
 
 
 }

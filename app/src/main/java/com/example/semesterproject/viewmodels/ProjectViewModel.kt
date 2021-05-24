@@ -13,8 +13,6 @@ class ProjectViewModel(private val db: ProjectDatabase) : ViewModel() {
     val projects: LiveData<List<Project>>
         get() = _projects
 
-    //val database = Room.databaseBuilder(context, ProjectDatabase::class.java, "projects").build()
-
     init {
         getAllProjects()
     }
@@ -26,8 +24,7 @@ class ProjectViewModel(private val db: ProjectDatabase) : ViewModel() {
     }
 
     //TODO !!!!
-
-    fun addActor(fullName: String?, birthYear: String?, movie: String?) {
+    fun addProject(fullName: String?, birthYear: String?, movie: String?) {
         if (fullName != null && birthYear != null && movie != null) {
             birthYear.toIntOrNull()?.let {
                 val project = Project(0, fullName, it,
@@ -42,45 +39,35 @@ class ProjectViewModel(private val db: ProjectDatabase) : ViewModel() {
             }
         }
     }
-    /*
-   fun addActor(){
-       viewModelScope.launch {
-           db.projectDao().insertAll(MockData.getProjectMock())
-           getAllProjects()
-       }
-   }
-*/
-
-
 
     //TODO !!!!
-    fun filter(year: String?, movie: String?) {
-        if (!year.isNullOrEmpty()) {
-            getAllYounger(year)
-        } else if (!movie.isNullOrEmpty()) {
-            getAllFromMovie(movie)
+    fun filter(diff: String?, name: String?) {
+        if (!diff.isNullOrEmpty()) {
+            getAllEasier(diff)
+        } else if (!name.isNullOrEmpty()) {
+            getAllByName(name)
         } else {
             getAllProjects()
         }
     }
 
-    private fun getAllYounger(year: String?) {
-        year?.toIntOrNull()?.let {
+    private fun getAllEasier(diff: String?) {
+        diff?.toIntOrNull()?.let {
             viewModelScope.launch {
                 _projects.postValue(db.projectDao().getEasier(it))
             }
         }
     }
 
-    private fun getAllFromMovie(movie: String?) {
-        movie?.let {
+    private fun getAllByName(name: String?) {
+        name?.let {
             viewModelScope.launch {
-                _projects.postValue(db.projectDao().getByName(movie))
+                _projects.postValue(db.projectDao().getByName(name))
             }
         }
     }
 
-    fun deleteActor(project: Project) {
+    fun deleteProject(project: Project) {
         viewModelScope.launch {
             //db.projectDao().deleteProject(project) //TODO
             getAllProjects()

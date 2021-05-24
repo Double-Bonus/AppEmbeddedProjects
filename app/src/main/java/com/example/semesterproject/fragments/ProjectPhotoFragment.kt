@@ -1,4 +1,4 @@
-package com.example.semesterproject
+package com.example.semesterproject.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,23 +14,11 @@ import com.example.semesterproject.viewmodels.ProjectPhotoViewModelFactory
 
 
 class ProjectPhotoFragment : Fragment() {
-
-    /*
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_project_photo, container, false)
-    }
-    */
-
-
-
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentProjectPhotoBinding.inflate(inflater)
-
 
         val viewModel : ProjectPhotoViewModel by viewModels {
             ProjectPhotoViewModelFactory(
@@ -40,26 +28,19 @@ class ProjectPhotoFragment : Fragment() {
             )
         }
 
-        /*
-        val viewModel: ProjectPhotoViewModel by viewModels {
-            ProjectPhotoViewModelFactory(requireContext()) }
-*/
         binding.viewmodel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
         val adapter = ProjectPhotoAdapter(ProjectPhotoAdapter.ProjectPhotoClickListener {
-            //viewModel.deleteActor(it)
+            //TODO
         })
         binding.prjPhRecyclerView.adapter = adapter
 
-        //TODO do wee need this?
         viewModel.projectsPh.observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
 
-
         return binding.root
     }
-
 
 }

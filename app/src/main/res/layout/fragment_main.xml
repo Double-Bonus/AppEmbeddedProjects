@@ -17,28 +17,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
-            android:text="Projects app"
+            android:text="Embedded projects app"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@+id/btn_findProject"
             app:layout_constraintHorizontal_bias="0.463"
             app:layout_constraintStart_toStartOf="@+id/btn_findProject"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/img_logo" />
 
         <Button
             android:id="@+id/btn_findProject"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="468dp"
+            android:layout_marginTop="20dp"
             android:text="Find project"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <Button
             android:id="@+id/btn_resistance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="68dp"
+            android:layout_marginTop="60dp"
             android:text="Calculate resistance"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.515"
@@ -49,7 +49,7 @@
             android:id="@+id/btn_allPrjcs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="89dp"
+            android:layout_marginTop="80dp"
             android:text="Browse all projects"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -59,14 +59,14 @@
             android:id="@+id/btn_partsInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="56dp"
+            android:layout_marginTop="50dp"
             android:text="Info about parts"
             app:layout_constraintEnd_toEndOf="@+id/btn_allPrjcs"
             app:layout_constraintStart_toStartOf="@+id/btn_allPrjcs"
             app:layout_constraintTop_toBottomOf="@+id/btn_allPrjcs" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/img_logo"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_marginTop="16dp"

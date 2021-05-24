@@ -32,7 +32,6 @@ class SensorFragment : Fragment() {
         })
 
         binding.sensorsRecyclerView.adapter = adapter
-
         binding.viewmodel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 

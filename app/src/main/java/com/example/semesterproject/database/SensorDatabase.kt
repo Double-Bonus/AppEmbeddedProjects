@@ -29,8 +29,4 @@ abstract class SensorDatabase : RoomDatabase(){
         }
     }
 
-
-
-
-
 }

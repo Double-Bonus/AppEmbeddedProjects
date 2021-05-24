@@ -20,7 +20,6 @@ class ProjectsFragment : Fragment() {
     ): View? {
         val binding = FragmentProjectsBinding.inflate(inflater)
 
-
         val viewModel : ProjectViewModel by viewModels {
             ProjectViewModelFactory(
                     ProjectDatabase.getInstance(
@@ -29,37 +28,30 @@ class ProjectsFragment : Fragment() {
             )
         }
 
-        /*
-        val viewModel: ProjectViewModel by viewModels {
-            ProjectViewModelFactory(requireContext()) }
-*/
         binding.viewmodel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
         val adapter = ProjectAdapter(ProjectAdapter.ProjectClickListener {
-            viewModel.deleteActor(it)
+            viewModel.deleteProject(it)
         })
         binding.projectsRecyclerView.adapter = adapter
 
-
-        //TODO do wee need this?
         viewModel.projects.observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
 
-        // TODO !!!!!!!!!!
+        // TODO
         binding.addBtn.setOnClickListener {
-            //viewModel.addActor()
-        viewModel.addActor(
+        viewModel.addProject(
                     binding.projectNameField.text.toString(),
                     binding.projectDiffField.text.toString(),
                     binding.movieTitleField.text.toString()
             )
         }
-        // TODO !!!!!!!!!!
+        // TODO
         binding.filterBtn.setOnClickListener {
             viewModel.filter(
-                    binding.birthYearField.text.toString(),
+                    binding.difficultyField.text.toString(),
                     binding.movieNameField.text.toString()
             )
         }
