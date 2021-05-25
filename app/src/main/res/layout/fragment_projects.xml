@@ -15,6 +15,54 @@
         android:layout_height="match_parent"
         tools:context=".fragments.ProjectsFragment">
 
+        <CheckBox
+            android:id="@+id/checkBox_hyd2"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="Hydrometer"
+            app:layout_constraintStart_toEndOf="@+id/checkBox_acc2"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox_ultraS" />
+
+        <CheckBox
+            android:id="@+id/checkBox_acc2"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="Acelerometer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox_wheel" />
+
+        <CheckBox
+            android:id="@+id/checkBox_mcu2"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="MCU"
+            app:layout_constraintStart_toEndOf="@+id/checkBox_ultraS"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox_air" />
+
+        <CheckBox
+            android:id="@+id/checkBox_res"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="Resistors"
+            app:layout_constraintStart_toEndOf="@+id/checkBox_hyd2"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox_mcu2" />
+
+        <CheckBox
+            android:id="@+id/checkBox_air"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="Air sensor"
+            app:layout_constraintStart_toEndOf="@+id/checkBox_lcd"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox_led" />
+
+        <CheckBox
+            android:id="@+id/checkBox_led"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="LED"
+            app:layout_constraintStart_toEndOf="@+id/checkBox_rtc"
+            app:layout_constraintTop_toTopOf="@+id/checkBox_rtc" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/projects_recycler_view"
             android:layout_width="0dp"
@@ -24,32 +72,29 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/filter_btn"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/filter_btn" />
 
         <EditText
             android:id="@+id/project_name_field"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="112dp"
             android:ems="10"
             android:hint="Project title"
             android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/project_diff_field"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.01" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/project_diff_field"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
             android:ems="10"
             android:hint="Difficulty"
             android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/checkBox_led"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/project_name_field"
@@ -58,33 +103,37 @@
 
         <EditText
             android:id="@+id/movie_title_field"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_width="197dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
             android:ems="10"
             android:hint="Title"
             android:inputType="textPersonName"
             app:layout_constraintBottom_toTopOf="@+id/filter_btn"
             app:layout_constraintEnd_toStartOf="@+id/add_btn"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/difficulty_field"
+            android:visibility= "gone"/>
 
         <Button
             android:id="@+id/add_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
             android:text="Add Project"
-            app:layout_constraintBottom_toBottomOf="@+id/movie_title_field"
+            app:layout_constraintBottom_toBottomOf="@+id/filter_btn"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/movie_title_field"
-            app:layout_constraintTop_toTopOf="@+id/movie_title_field" />
+            app:layout_constraintStart_toEndOf="@+id/filter_btn"
+            app:layout_constraintTop_toTopOf="@+id/filter_btn" />
 
         <EditText
             android:id="@+id/difficulty_field"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="24dp"
             android:layout_marginBottom="12dp"
             android:ems="10"
             android:hint="Filter by dificulty"
@@ -93,8 +142,7 @@
             app:layout_constraintEnd_toStartOf="@+id/movie_name_field"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox4"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/checkBox_acc2" />
 
         <EditText
             android:id="@+id/movie_name_field"
@@ -115,52 +163,71 @@
             android:id="@+id/filter_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="312dp"
+            android:layout_marginBottom="292dp"
             android:text="Filter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent" />
 
         <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CheckBox"
+            android:id="@+id/checkBox_dc"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="DC_motor"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/project_name_field" />
 
         <CheckBox
-            android:id="@+id/checkBox3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CheckBox"
+            android:id="@+id/checkBox_ble"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="BLE"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+            app:layout_constraintTop_toBottomOf="@+id/checkBox_dc" />
 
         <CheckBox
-            android:id="@+id/checkBox4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CheckBox"
+            android:id="@+id/checkBox_wheel"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="Wheels"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
+            app:layout_constraintTop_toBottomOf="@+id/checkBox_ble" />
 
         <CheckBox
-            android:id="@+id/checkBox5"
-            android:layout_width="123dp"
-            android:layout_height="53dp"
-            android:text="CheckBox"
-            app:layout_constraintStart_toEndOf="@+id/checkBox"
+            android:id="@+id/checkBox_rtc"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="RTC"
+            app:layout_constraintStart_toEndOf="@+id/checkBox_dc"
             app:layout_constraintTop_toBottomOf="@+id/project_name_field" />
 
         <CheckBox
-            android:id="@+id/checkBox6"
-            android:layout_width="122dp"
-            android:layout_height="48dp"
-            android:text="CheckBox"
-            app:layout_constraintStart_toEndOf="@+id/checkBox3"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox5" />
+            android:id="@+id/checkBox_lcd"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="LCD"
+            app:layout_constraintStart_toEndOf="@+id/checkBox_ble"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox_rtc" />
+
+        <CheckBox
+            android:id="@+id/checkBox_ultraS"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="Ultrasonic"
+            app:layout_constraintStart_toEndOf="@+id/checkBox_wheel"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox_lcd" />
+
+        <Button
+            android:id="@+id/bnt_find_prjc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:text="Find project"
+            app:layout_constraintBottom_toBottomOf="@+id/filter_btn"
+            app:layout_constraintEnd_toStartOf="@+id/filter_btn"
+            app:layout_constraintTop_toTopOf="@+id/filter_btn"
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

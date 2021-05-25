@@ -20,6 +20,12 @@ interface ProjectDao {
     @Query("SELECT * FROM projects WHERE Name LIKE :name")
     suspend fun getByName(name: String): List<Project>
 
+
+    @Query("SELECT * FROM projects WHERE ((not(DC_motor) OR :dc ) AND (not(BLE) OR :ble) AND (not(Wheels) OR :wheel) AND (not(RTC) OR :rtc) AND (not(LCD) OR :lcd) AND (not(Ultrasonic) OR :ul) AND (not(LED) OR :led) AND (not(Air_quality) OR :air) AND (not(MCU) OR :mcu) AND (not(Accelerometer) OR :acc) AND (not(Hydro) OR :hyd) AND (not(Resistors) OR :res)) ")
+    suspend fun getByParts(dc: Boolean, ble : Boolean, wheel :Boolean, rtc : Boolean,
+                           lcd : Boolean, ul : Boolean, led : Boolean, air : Boolean,
+                           mcu : Boolean, acc : Boolean,  hyd : Boolean,  res : Boolean): List<Project>
+
     @Delete
     suspend fun deleteProject(project: Project)
 

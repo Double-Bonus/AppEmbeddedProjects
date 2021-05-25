@@ -73,4 +73,14 @@ class ProjectViewModel(private val db: ProjectDatabase) : ViewModel() {
             getAllProjects()
         }
     }
+
+    fun findProject(dc: Boolean, ble: Boolean,  wheel :Boolean, rtc : Boolean,
+                    lcd : Boolean, ul : Boolean, led : Boolean, air : Boolean,
+                    mcu : Boolean, acc : Boolean,  hyd : Boolean,  res : Boolean) {
+        viewModelScope.launch {
+            _projects.postValue(db.projectDao().getByParts(dc, ble, wheel, rtc,
+                    lcd, ul, led , air, mcu, acc,  hyd,  res))
+        }
+    }
+
 }
