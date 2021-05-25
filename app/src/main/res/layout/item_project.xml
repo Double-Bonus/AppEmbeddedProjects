@@ -23,10 +23,12 @@
             android:id="@+id/name_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"
             android:text="@{project.name}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/difficulty_label"
+            app:layout_constraintStart_toStartOf="@+id/difficulty_label"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Robot Arm " />
 
@@ -34,12 +36,19 @@
             android:id="@+id/difficulty_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
-            android:text="@{String.valueOf(project.Difficulty)}"
+
+            android:layout_marginBottom="16dp"
+            android:text="@{`Project difficulty: ` + String.valueOf(project.Difficulty) + `/100`}"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.544"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/name_label"
-            tools:text="75" />
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Project difficulty: 75/100" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

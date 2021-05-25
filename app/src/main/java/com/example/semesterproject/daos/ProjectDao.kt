@@ -14,7 +14,7 @@ interface ProjectDao {
     @Query("SELECT * FROM projects")
     suspend fun getAll(): List<Project>
 
-    @Query("SELECT * FROM projects WHERE Difficulty >:diff")
+    @Query("SELECT * FROM projects WHERE Difficulty < :diff")
     suspend fun getEasier(diff: Int): List<Project>
 
     @Query("SELECT * FROM projects WHERE Name LIKE :name")
