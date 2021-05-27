@@ -46,7 +46,19 @@ class ProjectsFragment : Fragment() {
             viewModel.addProject(
                 binding.projectNameField.text.toString(),
                 binding.projectDiffField.text.toString(),
-                binding.movieTitleField.text.toString()
+                binding.movieTitleField.text.toString(),
+                    binding.checkBoxDc.isChecked,
+                    binding.checkBoxBle.isChecked,
+                    binding.checkBoxWheel.isChecked,
+                    binding.checkBoxRtc.isChecked,
+                    binding.checkBoxLcd.isChecked,
+                    binding.checkBoxUltraS.isChecked,
+                    binding.checkBoxLed.isChecked,
+                    binding.checkBoxAir.isChecked,
+                    binding.checkBoxMcu2.isChecked,
+                    binding.checkBoxAcc2.isChecked,
+                    binding.checkBoxHyd2.isChecked,
+                    binding.checkBoxRes.isChecked
             )
         }
         // TODO

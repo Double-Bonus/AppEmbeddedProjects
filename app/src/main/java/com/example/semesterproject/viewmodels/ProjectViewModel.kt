@@ -24,13 +24,16 @@ class ProjectViewModel(private val db: ProjectDatabase) : ViewModel() {
     }
 
     //TODO !!!!
-    fun addProject(fullName: String?, birthYear: String?, movie: String?) {
+    fun addProject(fullName: String?, birthYear: String?, movie: String?,
+                   dc: Boolean, ble: Boolean,  wheel :Boolean, rtc : Boolean,
+                   lcd : Boolean, ul : Boolean, led : Boolean, air : Boolean,
+                   mcu : Boolean, acc : Boolean,  hyd : Boolean,  res : Boolean) {
         if (fullName != null && birthYear != null && movie != null) {
             birthYear.toIntOrNull()?.let {
                 val project = Project(0, fullName, it,
                         "file:///android_asset/new_prcjt.png",
-                        true, false, true, false,
-                false, false, true, true, false, true, false, false,
+                        dc, ble, wheel, rtc,
+                        lcd, ul, led, air, mcu, acc, hyd, res,
                 false)
                 viewModelScope.launch {
                     db.projectDao().insertAll(project)

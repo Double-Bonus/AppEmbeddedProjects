@@ -10,7 +10,7 @@
     <Spinner
         android:id="@+id/spin_firstBand"
         android:layout_width="0dp"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/text_band_1"
         app:layout_constraintTop_toBottomOf="@+id/imageView_resistor" />
@@ -18,7 +18,7 @@
     <Spinner
         android:id="@+id/spin_secondBand"
         android:layout_width="0dp"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toEndOf="@+id/text_band_2"
@@ -27,7 +27,7 @@
     <Spinner
         android:id="@+id/spin_thirdBand"
         android:layout_width="0dp"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toEndOf="@+id/text_band_3"
@@ -36,7 +36,7 @@
     <Spinner
         android:id="@+id/spin_fourthBand"
         android:layout_width="0dp"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/text_band_4"
         app:layout_constraintTop_toBottomOf="@+id/spin_thirdBand" />
@@ -44,82 +44,90 @@
     <Spinner
         android:id="@+id/spin_fifthBand"
         android:layout_width="0dp"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/text_band_5"
         app:layout_constraintTop_toBottomOf="@+id/spin_fourthBand" />
 
     <Button
         android:id="@+id/btn_cacl_resistance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
+        android:layout_width="263dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="120dp"
         android:text="Calculate Resistance"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spin_fifthBand" />
+        app:layout_constraintTop_toBottomOf="@+id/switch_bandCnt" />
 
     <TextView
         android:id="@+id/text_band_1"
         android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
         android:text="1-st Band"
+        app:layout_constraintBottom_toBottomOf="@+id/spin_firstBand"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView_resistor" />
+        app:layout_constraintTop_toTopOf="@+id/spin_firstBand" />
 
 
     <TextView
         android:id="@+id/text_band_2"
         android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
         android:text="2-nd Band"
+        app:layout_constraintBottom_toBottomOf="@+id/spin_secondBand"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_band_1" />
+        app:layout_constraintTop_toTopOf="@+id/spin_secondBand" />
 
     <TextView
         android:id="@+id/text_band_3"
         android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
         android:text="3-rd Band"
+        app:layout_constraintBottom_toBottomOf="@+id/spin_thirdBand"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_band_2" />
+        app:layout_constraintTop_toTopOf="@+id/spin_thirdBand" />
 
     <TextView
         android:id="@+id/text_band_4"
         android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
         android:text="4-th Band"
+        app:layout_constraintBottom_toBottomOf="@+id/spin_fourthBand"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_band_3" />
+        app:layout_constraintTop_toTopOf="@+id/spin_fourthBand" />
 
     <TextView
         android:id="@+id/text_band_5"
         android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
         android:text="5-th Band"
+        app:layout_constraintBottom_toBottomOf="@+id/spin_fifthBand"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_band_4" />
+        app:layout_constraintTop_toTopOf="@+id/spin_fifthBand" />
 
     <TextView
         android:id="@+id/text_omh_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="8dp"
         android:text="150 Omhs with +- 10% tolerance"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btn_cacl_resistance"
         app:layout_constraintHorizontal_bias="0.411"
         app:layout_constraintStart_toStartOf="@+id/btn_cacl_resistance"
         app:layout_constraintTop_toBottomOf="@+id/btn_cacl_resistance"
-        app:layout_constraintVertical_bias="0.486" />
+        app:layout_constraintVertical_bias="0.495" />
 
     <Switch
         android:id="@+id/switch_bandCnt"
         android:layout_width="138dp"
         android:layout_height="51dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="104dp"
         android:text="change bands count"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_band_5" />

@@ -33,33 +33,37 @@
 
         <CheckBox
             android:id="@+id/checkBox_mcu2"
-            android:layout_width="120dp"
+            android:layout_width="0dp"
             android:layout_height="50dp"
             android:text="MCU"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/checkBox_ultraS"
             app:layout_constraintTop_toBottomOf="@+id/checkBox_air" />
 
         <CheckBox
             android:id="@+id/checkBox_res"
-            android:layout_width="120dp"
+            android:layout_width="0dp"
             android:layout_height="50dp"
             android:text="Resistors"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/checkBox_hyd2"
             app:layout_constraintTop_toBottomOf="@+id/checkBox_mcu2" />
 
         <CheckBox
             android:id="@+id/checkBox_air"
-            android:layout_width="120dp"
+            android:layout_width="0dp"
             android:layout_height="50dp"
             android:text="Air sensor"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/checkBox_lcd"
             app:layout_constraintTop_toBottomOf="@+id/checkBox_led" />
 
         <CheckBox
             android:id="@+id/checkBox_led"
-            android:layout_width="120dp"
+            android:layout_width="0dp"
             android:layout_height="50dp"
             android:text="LED"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/checkBox_rtc"
             app:layout_constraintTop_toTopOf="@+id/checkBox_rtc" />
 
@@ -130,15 +134,13 @@
 
         <EditText
             android:id="@+id/difficulty_field"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
-            android:layout_marginBottom="12dp"
             android:ems="10"
             android:hint="Filter by dificulty"
             android:inputType="textPersonName"
-            app:layout_constraintBottom_toTopOf="@+id/movie_title_field"
             app:layout_constraintEnd_toStartOf="@+id/movie_name_field"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -146,7 +148,7 @@
 
         <EditText
             android:id="@+id/movie_name_field"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:ems="10"
@@ -154,7 +156,6 @@
             android:inputType="textPersonName"
             app:layout_constraintBottom_toBottomOf="@+id/difficulty_field"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/difficulty_field"
             app:layout_constraintTop_toTopOf="@+id/difficulty_field"
             app:layout_constraintVertical_bias="0.0" />
@@ -163,12 +164,12 @@
             android:id="@+id/filter_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="292dp"
+            android:layout_marginTop="16dp"
             android:text="Filter"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/difficulty_field" />
 
         <CheckBox
             android:id="@+id/checkBox_dc"
