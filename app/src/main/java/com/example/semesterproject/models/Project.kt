@@ -21,8 +21,5 @@ data class Project(
         val MCU: Boolean,
         val Accelerometer: Boolean,
         val Hydro: Boolean,
-        val Resistors: Boolean,
-        val Bluetooth: Boolean
-
-        //val imageUrl: String,
+        val Resistors: Boolean
 )

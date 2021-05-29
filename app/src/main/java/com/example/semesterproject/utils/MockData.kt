@@ -122,9 +122,7 @@ object MockData {
                     false,
                     true,
                     true,
-                    false,
-                    false
-                    ),
+                    false),
             Project(0,
                     "antr",
                     36,
@@ -140,9 +138,7 @@ object MockData {
                     false,
                     true,
                     true,
-                    false,
-                    false
-            ),
+                    false),
             Project(0,
                     "trec",
                     22,
@@ -158,9 +154,7 @@ object MockData {
                     false,
                     true,
                     true,
-                    false,
-                    false
-            ),
+                    false),
 
     )
 

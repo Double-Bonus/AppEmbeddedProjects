@@ -24,7 +24,7 @@ class ResistanceFragment : Fragment() {
 
 
     // TODO can rename!!  ar tikrai mutable list reiktu???
-    val color_digit = mutableListOf(
+    private val color_digit = mutableListOf(
             Band("Black", 0.0),
             Band("Brown", 1.0),
             Band("Red", 2.0),
@@ -37,7 +37,7 @@ class ResistanceFragment : Fragment() {
             Band("White", 9.0)
     )
     //TODO do we even need this list??
-    val multiplier  = mutableListOf(
+    private val multiplier  = mutableListOf(
             Band("Black", 0.0),
             Band("Brown", 1.0),
             Band("Red", 2.0),
@@ -49,7 +49,7 @@ class ResistanceFragment : Fragment() {
             Band("Grey", 8.0),
             Band("White", 9.0)
     )
-    val tolerance   = mutableListOf(
+    private val tolerance   = mutableListOf(
             Band("Brown", 1.0),
             Band("Red", 2.0),
             Band("Green", 0.5),
@@ -61,8 +61,8 @@ class ResistanceFragment : Fragment() {
     )
 
 
-    var bands_input = arrayOf<String>("","","","","") // returns Array<String?>
-    var bands_cnt : Int = 5;
+    private var bands_input = arrayOf<String>("","","","","") // returns Array<String?>
+    private var bands_cnt : Int = 5;
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

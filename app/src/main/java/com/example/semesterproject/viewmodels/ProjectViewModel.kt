@@ -17,6 +17,22 @@ class ProjectViewModel(private val db: ProjectDatabase) : ViewModel() {
         getAllProjects()
     }
 
+    private fun getAllEasier(diff: String?) {
+        diff?.toIntOrNull()?.let {
+            viewModelScope.launch {
+                _projects.postValue(db.projectDao().getEasier(it))
+            }
+        }
+    }
+
+    private fun getAllByName(name: String?) {
+        name?.let {
+            viewModelScope.launch {
+                _projects.postValue(db.projectDao().getByName(name))
+            }
+        }
+    }
+
     fun getAllProjects() {
         viewModelScope.launch {
             _projects.postValue(db.projectDao().getAll())
@@ -33,8 +49,7 @@ class ProjectViewModel(private val db: ProjectDatabase) : ViewModel() {
                 val project = Project(0, fullName, it,
                         "file:///android_asset/new_prcjt.png",
                         dc, ble, wheel, rtc,
-                        lcd, ul, led, air, mcu, acc, hyd, res,
-                false)
+                        lcd, ul, led, air, mcu, acc, hyd, res)
                 viewModelScope.launch {
                     db.projectDao().insertAll(project)
                     getAllProjects()
@@ -54,21 +69,7 @@ class ProjectViewModel(private val db: ProjectDatabase) : ViewModel() {
         }
     }
 
-    private fun getAllEasier(diff: String?) {
-        diff?.toIntOrNull()?.let {
-            viewModelScope.launch {
-                _projects.postValue(db.projectDao().getEasier(it))
-            }
-        }
-    }
 
-    private fun getAllByName(name: String?) {
-        name?.let {
-            viewModelScope.launch {
-                _projects.postValue(db.projectDao().getByName(name))
-            }
-        }
-    }
 
     fun deleteProject(project: Project) {
         viewModelScope.launch {

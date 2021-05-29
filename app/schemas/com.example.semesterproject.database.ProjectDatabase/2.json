@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "623ab3a76cce629b25a0ecd78800a8c5",
+    "identityHash": "52eb31170e5ac7c1f3afac28e1ff09ec",
     "entities": [
       {
         "tableName": "projects",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`projectId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `Name` TEXT NOT NULL, `Difficulty` INTEGER NOT NULL, `imageUrl` TEXT NOT NULL, `DC_motor` INTEGER NOT NULL, `BLE` INTEGER NOT NULL, `Wheels` INTEGER NOT NULL, `RTC` INTEGER NOT NULL, `LCD` INTEGER NOT NULL, `Ultrasonic` INTEGER NOT NULL, `LED` INTEGER NOT NULL, `Air_quality` INTEGER NOT NULL, `MCU` INTEGER NOT NULL, `Accelerometer` INTEGER NOT NULL, `Hydro` INTEGER NOT NULL, `Resistors` INTEGER NOT NULL, `Bluetooth` INTEGER NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`projectId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `Name` TEXT NOT NULL, `Difficulty` INTEGER NOT NULL, `imageUrl` TEXT NOT NULL, `DC_motor` INTEGER NOT NULL, `BLE` INTEGER NOT NULL, `Wheels` INTEGER NOT NULL, `RTC` INTEGER NOT NULL, `LCD` INTEGER NOT NULL, `Ultrasonic` INTEGER NOT NULL, `LED` INTEGER NOT NULL, `Air_quality` INTEGER NOT NULL, `MCU` INTEGER NOT NULL, `Accelerometer` INTEGER NOT NULL, `Hydro` INTEGER NOT NULL, `Resistors` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "projectId",
@@ -103,12 +103,6 @@
             "columnName": "Resistors",
             "affinity": "INTEGER",
             "notNull": true
-          },
-          {
-            "fieldPath": "Bluetooth",
-            "columnName": "Bluetooth",
-            "affinity": "INTEGER",
-            "notNull": true
           }
         ],
         "primaryKey": {
@@ -124,7 +118,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '623ab3a76cce629b25a0ecd78800a8c5')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '52eb31170e5ac7c1f3afac28e1ff09ec')"
     ]
   }
 }
